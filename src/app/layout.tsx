@@ -5,9 +5,9 @@ import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
 
-const interHeading = Inter({subsets:['latin'],variable:'--font-heading'});
+const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" });
 
-const dmSans = DM_Sans({subsets:['latin'],variable:'--font-sans'});
+const dmSans = DM_Sans({ subsets: ["latin"], variable: "--font-sans" });
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -31,15 +31,10 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      
-    <html lang="en" className={cn("font-sans", dmSans.variable, interHeading.variable)} suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-        {children}
-      </body>
-      <Toaster />
-    </html>
-        </ClerkProvider>
+      <html lang="en" className={cn("font-sans", dmSans.variable, interHeading.variable)} suppressHydrationWarning>
+        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>{children}</body>
+        <Toaster />
+      </html>
+    </ClerkProvider>
   );
 }
