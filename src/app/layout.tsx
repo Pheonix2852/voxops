@@ -32,7 +32,7 @@ export default function RootLayout({
   return (
     <ClerkProvider>
       
-    <html lang="en" className={cn("font-sans", dmSans.variable, interHeading.variable)}>
+    <html lang="en" className={cn("font-sans", dmSans.variable, interHeading.variable)} suppressHydrationWarning>
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         >
