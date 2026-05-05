@@ -2,7 +2,7 @@
 
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
-import { TEXT_MAX_LENGTH } from "../../text-to-speech/data/constants";
+import { COST_PER_UNIT, TEXT_MAX_LENGTH } from "../../text-to-speech/data/constants";
 import { useRouter } from "next/navigation";
 import { Badge } from "@/components/ui/badge";
 import { Coins } from "lucide-react";
@@ -39,7 +39,7 @@ export function TextInputPanel() {
                   "Start typing to estimate"
                 ) : (
                   <>
-                    <span className="tabular-nums">${(text.length * 0.0003).toFixed(4)} estimated</span>
+                    <span className="tabular-nums">${(text.length * COST_PER_UNIT).toFixed(4)} estimated</span>
                   </>
                 )}
               </span>

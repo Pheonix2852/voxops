@@ -1,0 +1,7 @@
+import { TextToSpeechLayout } from "@/app/features/text-to-speech/views/text-to-speech-layout";
+import React from "react";
+
+export default function Layout({ children }: { children: React.ReactNode }) {
+  return <TextToSpeechLayout>{children}</TextToSpeechLayout>;
+}
+ 
