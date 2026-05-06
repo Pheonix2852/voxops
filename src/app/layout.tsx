@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Toaster } from "sonner";
 import { ClerkProvider } from "@clerk/nextjs";
+import { TRPCReactProvider } from "@/trpc/client";
 
 const interHeading = Inter({ subsets: ["latin"], variable: "--font-heading" });
 
@@ -34,16 +35,18 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html
-        lang="en"
-        className={cn("font-sans", dmSans.variable, interHeading.variable)}
-        suppressContentEditableWarning
-      >
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {children}
-          <Toaster />
-        </body>
-      </html>
+      <TRPCReactProvider>
+        <html
+          lang="en"
+          className={cn("font-sans", dmSans.variable, interHeading.variable)}
+          suppressContentEditableWarning
+        >
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
+            {children}
+            <Toaster />
+          </body>
+        </html>
+      </TRPCReactProvider>
     </ClerkProvider>
   );
 }
