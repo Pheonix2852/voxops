@@ -13,7 +13,7 @@ export function DashboardHeader() {
       <div className="space-y-1">
         <p className="text-sm text-muted-foreground">Nice to see you!</p>
         <h1 className="text-2xl lg:text-3xl font-semibold tracking-tight">
-          {isLoaded ? (user?.fullName ?? user?.firstName ?? "there") : "..."}
+          {isLoaded ? (user?.firstName ?? user?.fullName ?? "there") : "..."}
         </h1>
       </div>
 

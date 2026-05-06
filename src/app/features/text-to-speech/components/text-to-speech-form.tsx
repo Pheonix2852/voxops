@@ -35,5 +35,16 @@ export function TextToSpeechForm({
   children: React.ReactNode;
   defaultValues?: TTSFormValues;
 }) {
-  const form = useAppForm();
+  const form = useAppForm({
+    ...ttsFormOptions,
+    defaultValues: defaultValues ?? defaultTTSFormValues,
+    validators: {
+      onSubmit: ttsFormSchema,
+    },
+    onSubmit: async (values) => {
+      console.log(values);
+    },
+  });
+
+  return <form.AppForm>{children}</form.AppForm>;
 }
