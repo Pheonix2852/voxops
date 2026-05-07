@@ -8,7 +8,7 @@ import { PrismaPg } from "@prisma/adapter-pg";
 import { PutObjectCommand, S3Client, type PutObjectCommandInput } from "@aws-sdk/client-s3";
 
 import { PrismaClient, type VoiceCategory } from "../src/generated/prisma/client";
-import { SYSTEM_VOICE_NAMES } from "@/app/features/voices/data/voice-scoping";
+import { SYSTEM_VOICE_NAMES } from "@/features/voices/data/voice-scoping";
 
 const SYSTEM_VOICES_DIR = path.join(path.dirname(fileURLToPath(import.meta.url)), "system-voices");
 
